@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adhere Medical - Your partner in health.">
+        <meta name="keywords" content="health, medical, adhere, healthcare, wellness">
+        <title>Adhere Medical</title>
+        <link rel = "stylesheet" href = "styleSidebar.css">
+        <link rel = "stylesheet" href = "styleTopbar.css">
+        <link rel = "stylesheet" href = "styleHome.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <script>
+            function logout() {
+                // Clear session storage to log out the user
+                sessionStorage.clear();
+                // Redirect to the login page
+                window.location.href = "login.html";
+            }
+        </script>
+        <style>
+            body{
+                background-color: #fdf5dd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topBar">
+            <div class="topBar-C">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <h1><a href="index.html">Adhere Medical</a></h1>
+                    <h2 id="welcome-name" style="font-size: 1.2rem; font-weight: normal;"></h2>
+                </div>
+                <p>Your partner in health.</p>
+            </div>
+            <ul class = "topBar-links">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Signup.html">Signup</a></li>
+            </ul>
+        </div>
+        <aside class = "sidebar">
+            <div class = "sidebar-header">
+                <img src="pill_bottle.jpg" alt="pill bottle">
+                <h2>Adhere Medical</h2>
+            </div>
+            <ul class = "sidebar-links">
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>Dashboard</a>
+                </li>
+                <li><a href="medication.html">
+                    <span class="material-symbols-outlined">
+                        pill
+                    </span>Medication</a>
+                </li>
+                <li><a href="calender.html">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>Calender</a>
+                </li>
+                <li><a href="concerns.html">
+                    <span class="material-symbols-outlined">
+                        description
+                    </span>Concerns</a>
+                </li>
+                <li><a href="profile.html">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>Profile</a>
+                </li>
+            </ul>
+            <ul class = "sidebar-footer">
+                <li><a href="index.html">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                    </span>Homepage</a>
+                </li>
+                <li><a href="mailto:examplemail@gmail.com">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>Email Us</a>
+                </li>
+                <li><a href="privacy.html">
+                    <span class="material-symbols-outlined">
+                        safety_check
+                    </span>Privacy Policy</a>
+                </li>
+                <li><a href="#" id="logout-button">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>Logout</a>
+                </li>
+            </ul>
+        </aside>
+        <div class = "homepage">
+            <article class = "content">
+                <figure>
+                    <img src="background-4.jpg" alt="rectangle white pills on yellow background"/>
+                </figure>
+                <h2>Welcome to Adhere Medical!</h2>
+                <p>Managing a complex medication routine can be overwhelming—especially for those living with chronic illnesses 
+                    or caring for patients with intricate regimens. Our Medication Adherence System is here to simplify it all. Easily add medications, 
+                    log your symptoms and concerns, and generate a personalized calendar with exact times for each dose. As we continue developing our 
+                    platform, we aim to do more than remind—we’ll track adherence, flag missed doses, and generate detailed reports to keep healthcare 
+                    providers informed and patients safer. Whether you're a patient, caregiver, or doctor, we’re building the support system you deserve.
+                </p>
+            </article>
+            <div class = "homepage-cards">
+                <article class = "subcontent-1">
+                    <figure>
+                        <img src="chronically_ill.jpg" alt="woman hunched over in pain"/>
+                    </figure>
+                    <h3>Chronically ill</h3>
+                    <p>Stay on top of every dose with a personalized medication schedule that adapts to your unique regimen. Log symptoms and side effects in 
+                        real time, so nothing gets overlooked during doctor visits. Get gentle reminders, clear guidance, and peace of mind—because your health deserves consistency.
+                    </p>
+                </article>
+                <article class = "subcontent-2">
+                    <figure>
+                        <img src="Complex_regimine.jpg" alt="girl taking pills with water"/>
+                    </figure>
+                    <h3>Those with complex regimines</h3>
+                    <p>Juggling multiple medications and timing can feel like a full-time job—our platform keeps it all organized for you. Create a detailed medication calendar, 
+                        set up reminders, and never miss a dose, no matter how complicated your routine. It’s all in one place, designed to reduce stress and improve your daily health routine.
+                    </p>
+                </article>
+                <article class = "subcontent-3">
+                    <figure>
+                        <img src="Doctors.jpg" alt="doctors at desk"/>
+                    </figure>
+                    <h3>Doctors</h3>
+                    <p>Gain deeper insight into your patients' medication adherence with real-time tracking and comprehensive reports. Review logged symptoms and missed doses before appointments 
+                        to better inform treatment plans. Our system strengthens the doctor-patient connection by turning daily data into meaningful care.
+                    </p>
+                </article>
+            </div>
+        </div>
+        <script>
+            const userData = JSON.parse(sessionStorage.getItem('loggedInUser'));
+            
+            if (userData) {
+                document.getElementById("welcome-name").textContent = `Welcome, ${userData.firstname || userData.username}!`;
+            } else {
+                window.location.href = "/signup.html"; // Redirect to login if no user data is found
+            }
+        </script>
+    </body>
+</html>

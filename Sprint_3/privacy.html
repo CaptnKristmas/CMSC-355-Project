@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adhere Medical - Your partner in health.">
+        <meta name="keywords" content="health, medical, adhere, healthcare, wellness">
+        <title>Adhere Medical</title>
+        <link rel = "stylesheet" href = "styleSidebar.css">
+        <link rel = "stylesheet" href = "styleTopbar.css">
+        <link rel = "stylesheet" href = "stylePrivacy.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <script>
+            function logout() {
+                // Clear session storage to log out the user
+                sessionStorage.clear();
+                // Redirect to the login page
+                window.location.href = "login.html";
+            }
+        </script>
+        <style>
+            body{
+                background-color: #fdf5dd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "topBar">
+            <div class = "topBar-C">
+                <h1><a href="index.html">Adhere Medical</a></h1>
+                <p>Your partner in health.</p>
+            </div>
+            <ul class = "topBar-links">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Signup.html">Signup</a></li>
+            </ul>
+        </div>
+        <aside class = "sidebar">
+            <div class = "sidebar-header">
+                <img src="images/pill_bottle.jpg" alt="pill bottle">
+                <h2>Adhere Medical</h2>
+            </div>
+            <ul class = "sidebar-links">
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>Dashboard</a>
+                </li>
+                <li><a href="medication.html">
+                    <span class="material-symbols-outlined">
+                        pill
+                    </span>Medication</a>
+                </li>
+                <li><a href="calender.html">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>Calender</a>
+                </li>
+                <li><a href="concerns.html">
+                    <span class="material-symbols-outlined">
+                        description
+                    </span>Concerns</a>
+                </li>
+                <li><a href="profile.html">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>Profile</a>
+                </li>
+            </ul>
+            <ul class = "sidebar-footer">
+                <li><a href="index.html">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                    </span>Homepage</a>
+                </li>
+                <li><a href="mailto:examplemail@gmail.com">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>Email Us</a>
+                </li>
+                <li><a href="privacy.html">
+                    <span class="material-symbols-outlined">
+                        safety_check
+                    </span>Privacy Policy</a>
+                </li>
+                <li><a href="#" onclick="logout()">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>Logout</a>
+                </li>
+            </ul>
+        </aside>
+        <div class = "PrivacyPolicy">
+            <h1>Privacy Policy</h1>
+            <p>Effctive Date: 4/16/2025</p>
+            <p>At Adhere Medical, your privacy is a top priority. This Privacy Policy explains how we collect, use, 
+                and protect your information when you use our platform to manage medications, log symptoms, and share 
+                health data with care providers.
+            </p>
+            <h2>Information We Collect</h2>
+            <ul>
+                <li><strong>Personal Information:</strong> We may collect personal information such as your name, email address, and phone number when you create an account.</li>
+                <li><strong>Health Information:</strong> We collect health-related information, including medication details, symptoms, and other health data you choose to share.</li>
+                <li><strong>Usage Data:</strong> We may collect information about how you use our platform, including your interactions with our services.</li>
+            </ul>
+            <h2>How We Use Your Information</h2>
+            <ul>
+                <li>To provide and maintain our services.</li>
+                <li>To personalize your experience and improve our platform.</li>
+                <li>To communicate with you, including sending updates and promotional materials.</li>
+                <li>To analyze usage patterns and enhance our services.</li>
+                <li>To comply with legal obligations and protect our rights.</li>
+            </ul>
+            <h2>How we protect your information</h2>
+            <ul>
+                <li>We implement a variety of security measures to maintain the safety of your personal information.</li>
+                <li>We use encryption to protect sensitive data transmitted over the internet.</li>
+                <li>We restrict access to your personal information to authorized personnel only.</li>
+                <li>We regularly review our security practices to ensure your information is safe.</li>
+            </ul>
+            <h2>Sharing Your Information</h2>
+            <ul>
+                <li>We do not sell or rent your personal information to third parties.</li>
+                <li>We may share your information with trusted service providers who assist us in operating our platform.</li>
+                <li>We may disclose your information if required by law or to protect our rights.</li> 
+                <li>We may share aggregated, non-personal information for research and analysis purposes.</li>
+            </ul>
+            <h2>Your Rights</h2>
+            <ul>
+                <li>You have the right to access, correct, or delete your personal information.</li>
+                <li>You can opt-out of receiving promotional communications from us.</li>
+                <li>You can request a copy of your data in a structured format.</li>
+            </ul>
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on our platform. 
+                You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+            </p>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns about your privacy rights, please contact us at [<a href = "mailto:exampleemail@gmail.com.">exampleemail@gmail.com].</a></p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Adhere Medical - Your partner in health."
+    />
+    <meta
+      name="keywords"
+      content="health, medical, adhere, healthcare, wellness"
+    />
+    <title>Adhere Medical</title>
+    <link rel="stylesheet" href="styleSidebar.css" />
+    <link rel="stylesheet" href="styleTopbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <script>
+      function logout() {
+        // Clear session storage to log out the user
+        sessionStorage.clear();
+        // Redirect to the login page
+        window.location.href = "login.html";
+      }
+      function addhere() {
+        // trigger adhernce
+      }
+    </script>
+    <style>
+      body {
+        background-color: #fdf5dd;
+      }
+    </style>
+    <script src="medicationCode.js"></script>
+    <script>
+      function updateMedicationButtons() {
+        const container = document.getElementById("buttonContainer");
+
+        // Clear existing buttons
+        container.innerHTML = "";
+
+        // Style container
+        container.style.display = "flex";
+        container.style.flexDirection = "column";
+        container.style.alignItems = "center";
+        container.style.gap = "15px";
+        container.style.marginTop = "15px";
+
+        // Loop and recreate all buttons
+        medicationList.forEach((med, i) => {
+          const wrapper = document.createElement("div");
+          wrapper.style.display = "flex";
+          wrapper.style.flexDirection = "column";
+          wrapper.style.alignItems = "center";
+          wrapper.style.gap = "5px";
+
+          const description = document.createElement("p");
+          description.textContent = `${med.name}`;
+          description.style.margin = "0";
+          description.style.fontWeight = "bold";
+
+          const button = document.createElement("button");
+          button.textContent = `Details`;
+          button.style.padding = "10px 20px";
+          button.style.fontSize = "16px";
+          button.style.backgroundColor = "#3498db";
+          button.style.color = "white";
+          button.style.border = "none";
+          button.style.borderRadius = "5px";
+          button.style.cursor = "pointer";
+
+          button.onclick = function () {
+            //alert(You clicked on ${med.name} (Code: ${med.code}));
+            openPanel(med.name, med.code);
+          };
+
+          wrapper.appendChild(description);
+          wrapper.appendChild(button);
+          container.appendChild(wrapper);
+        });
+      }
+      function openPanel(name, code, description) {
+        const med = medicationList.find(
+          (m) => m.name === name && m.code === code
+        );
+
+        document.getElementById("panelMedName").textContent = name;
+        document.getElementById("panelMedCode").textContent = `Generic: ${code}`;
+        document.getElementById("panelMedDesc").textContent = `Drug Class: ${
+          med?.description || "No description available."
+        }`;
+
+        document.getElementById("medPanel").style.display = "flex";
+      }
+
+      function closePanel() {
+        document.getElementById("medPanel").style.display = "none";
+      }
+     
+
+      // Initial render on page load
+      document.addEventListener("DOMContentLoaded", updateMedicationButtons);
+    </script>
+  </head>
+  <body>
+    <div
+      id="addMedPanel"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      "
+    >
+      <div
+        style="
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+          text-align: center;
+          min-width: 300px;
+        "
+      >
+        <h2>Add New Medication</h2>
+        <input
+          id="newMedName"
+          placeholder="Medication Name"
+          style="margin: 10px; padding: 10px; width: 90%"
+        />
+        <input
+          id="newMedCode"
+          placeholder="Generic"
+          style="margin: 10px; padding: 10px; width: 90%"
+        />
+        <textarea
+          id="newMedDesc"
+          placeholder="Drug Class"
+          style="margin: 10px; padding: 10px; width: 90%"
+        ></textarea>
+
+        <button
+          onclick="saveNewMedication()"
+          style="
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          Save
+        </button>
+        <button
+          onclick="closeAddPanel()"
+          style="
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: #777;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="medPanel"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      "
+    >
+      <div
+        style="
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+          text-align: center;
+          min-width: 300px;
+        "
+      >
+        <h2 id="panelMedName">Medication Name</h2>
+        <p id="panelMedCode">Code:</p>
+        <p id="panelMedDesc">Description:</p>
+        <button
+          onclick="closePanel()"
+          style="
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            background-color: #555;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          Back
+        </button>
+      </div>
+    </div>
+
+    <div class="topBar">
+      <div class="topBar-C">
+        <h1><a href="index.html">Adhere Medical</a></h1>
+        <p>Your partner in health.</p>
+      </div>
+      <ul class="topBar-links">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="Signup.html">Signup</a></li>
+      </ul>
+    </div>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="images/pill_bottle.jpg" alt="pill bottle" />
+        <h2>Adhere Medical</h2>
+      </div>
+      <ul class="sidebar-links">
+        <li>
+          <a href="#">
+            <span class="material-symbols-outlined"> menu </span>Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="medication.html">
+            <span class="material-symbols-outlined"> pill </span>Medication</a
+          >
+        </li>
+        <li>
+          <a href="calender.html">
+            <span class="material-symbols-outlined"> calendar_month </span
+            >Calender</a
+          >
+        </li>
+        <li>
+          <a href="concerns.html">
+            <span class="material-symbols-outlined"> description </span
+            >Concerns</a
+          >
+        </li>
+        <li>
+          <a href="profile.html">
+            <span class="material-symbols-outlined"> account_circle </span
+            >Profile</a
+          >
+        </li>
+      </ul>
+      <ul class="sidebar-footer">
+        <li>
+          <a href="index.html">
+            <span class="material-symbols-outlined"> dashboard </span
+            >Homepage</a
+          >
+        </li>
+        <li>
+          <a href="mailto:examplemail@gmail.com">
+            <span class="material-symbols-outlined"> mail </span>Email Us</a
+          >
+        </li>
+        <li>
+          <a href="privacy.html">
+            <span class="material-symbols-outlined"> safety_check </span>Privacy
+            Policy</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="logout()">
+            <span class="material-symbols-outlined"> logout </span>Logout</a
+          >
+        </li>
+      </ul>
+    </aside>
+    <div style="text-align: center; margin-top: 30px" class="medications">
+      <p>medications go here</p>
+      <div id="buttonContainer" style="text-align: center"></div>
+    </div>
+    <div style="text-align: center; margin-top: 30px">
+      <button onclick="addhere()" style="padding: 10px 20px">
+        Add New Medication
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "cmsc-355-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Medical adherance program and medicine schedule.",
+  "main": "Sprint_1/server.js",
+  "scripts": {
+    "start": "node Sprint_1/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haley-Roe/CMSC-355-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haley-Roe/CMSC-355-Project/issues"
+  },
+  "homepage": "https://github.com/Haley-Roe/CMSC-355-Project#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "userType": "doc",
+    "firstname": "Dr. Doc",
+    "username": null,
+    "email": "doc@gmail.com",
+    "id": "1234567890",
+    "password": "Password"
+  },
+  {
+    "userType": "patient",
+    "firstname": "Haley",
+    "username": "Roehg",
+    "email": "roehg@gmail.com",
+    "id": null,
+    "password": "Henretta1"
+  },
+  {
+    "userType": "patient",
+    "firstname": "Vlad",
+    "username": "Vlad",
+    "email": "vlad@gmail.com",
+    "password": "Password"
+  }
+]

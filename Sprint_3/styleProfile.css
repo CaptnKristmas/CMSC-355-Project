@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    font-family: Poppins, Segoe UI, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile {
+    margin-left: 90px;
+    padding: 10px;
+}
+
+.profile h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.profile form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile form dl {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.profile form input:focus {
+    outline: none;
+    border-color: #ffd972;
+    background-color: #fff;
+}
+
+.profile .medications input {
+    height: 100px; /* Increase height for medications input */
+    resize: none; /* Prevent resizing */
+}
+
+.profile button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #ffd972;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile button:hover {
+    background-color: #fbb800;
+}
+
+.profile button.edit-button {
+    background-color: #6b7280;
+}
+
+.profile button.edit-button:hover {
+    background-color: #4b5563;
+}

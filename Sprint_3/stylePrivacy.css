@@ -1,0 +1,27 @@
+.PrivacyPolicy{
+    margin-left: 90px;
+}
+.PrivacyPolicy h1{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.PrivacyPolicy h2{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.PrivacyPolicy h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.PrivacyPolicy p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.PrivacyPolicy ul{
+    font-size: 16px;
+    margin-bottom: 10px;
+}  
+.PrivacyPolicy ul li{
+    margin-bottom: 5px;
+    list-style-type: disc;
+}

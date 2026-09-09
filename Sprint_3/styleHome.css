@@ -1,0 +1,80 @@
+.homepage {
+    margin-left: 85px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #fdf5dd;
+}
+
+/* Banner image at the top */
+.homepage .content figure img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Center the welcome text and paragraph */
+.homepage .content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.homepage .content h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.homepage .content p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Container for the three info boxes */
+.homepage .subcontent-1,
+.homepage .subcontent-2,
+.homepage .subcontent-3 {
+    flex: 1 1 30%;
+    background-color: #fbb800;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Layout for the card section */
+.homepage-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 0; 
+}
+
+.homepage .subcontent-1 img,
+.homepage .subcontent-2 img,
+.homepage .subcontent-3 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.homepage .subcontent-1 h3,
+.homepage .subcontent-2 h3,
+.homepage .subcontent-3 h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.homepage .subcontent-1 p,
+.homepage .subcontent-2 p,
+.homepage .subcontent-3 p {
+    font-size: 14px;
+    line-height: 1.5;
+}

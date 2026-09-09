@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adhere Medical - Your partner in health.">
+        <meta name="keywords" content="health, medical, adhere, healthcare, wellness">
+        <title>Adhere Medical</title>
+        <link rel = "stylesheet" href = "styleSidebar.css">
+        <link rel = "stylesheet" href = "styleTopbar.css">
+        <link rel = "stylesheet" href = "styleProfile.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <script>
+            function logout() {
+                // Clear session storage to log out the user
+                sessionStorage.clear();
+                // Redirect to the login page
+                window.location.href = "login.html";
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("form");
+            const saveButton = document.querySelector(".save-button");
+            const editButton = document.querySelector(".edit-button");
+            const inputs = form.querySelectorAll("input");
+
+            // Function to set all inputs to readonly
+            function setReadonly(isReadonly) {
+                inputs.forEach(input => {
+                    input.readOnly = isReadonly;
+                });
+            }
+
+            // Initially set inputs to readonly
+            setReadonly(true);
+
+            // Save button functionality
+            saveButton.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent form submission
+                setReadonly(true); // Make inputs readonly
+            });
+
+            // Edit button functionality
+            editButton.addEventListener("click", function () {
+                setReadonly(false); // Make inputs editable
+            });
+            });
+        </script>
+        <style>
+            body{
+                background-color: #fdf5dd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "topBar">
+            <div class = "topBar-C">
+                <h1><a href="index.html">Adhere Medical</a></h1>
+                <p>Your partner in health.</p>
+            </div>
+            <ul class = "topBar-links">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Signup.html">Signup</a></li>
+            </ul>
+        </div>
+        <aside class = "sidebar">
+            <div class = "sidebar-header">
+                <img src="images/pill_bottle.jpg" alt="pill bottle">
+                <h2>Adhere Medical</h2>
+            </div>
+            <ul class = "sidebar-links">
+                <li><a href="medication.html">
+                    <span class="material-symbols-outlined">
+                        pill
+                    </span>Medication</a>
+                </li>
+                <li><a href="calender.html">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>Calender</a>
+                </li>
+                <li><a href="concerns.html">
+                    <span class="material-symbols-outlined">
+                        description
+                    </span>Concerns</a>
+                </li>
+                <li><a href="profile.html">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>Profile</a>
+                </li>
+            </ul>
+            <ul class = "sidebar-footer">
+                <li><a href="index.html">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                    </span>Homepage</a>
+                </li>
+                <li><a href="mailto:examplemail@gmail.com">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>Email Us</a>
+                </li>
+                <li><a href="privacy.html">
+                    <span class="material-symbols-outlined">
+                        safety_check
+                    </span>Privacy Policy</a>
+                </li>
+                <li><a href="#" onclick="logout()">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>Logout</a>
+                </li>
+            </ul>
+        </aside>
+        <div class = "profile">
+            <h2>Your Profile</h2>
+            <form id="form">
+                <dl>
+                    <dt>
+                        <div class = "user-name">
+                            <label for = "user-name">
+                                <span class="material-symbols-outlined">
+                                    person
+                                </span>Your Name:                
+                            </label>
+                            <input type = "text" name = "user-name" id = "user-name-input" placeholder="Your Name">
+                        </div>
+                    </dt>
+                    <dd>
+                        <div class = "Date-of-birth">
+                            <label for = "date-of-birth">
+                                <span class="material-symbols-outlined">
+                                    calendar_today
+                                </span>Date of Birth:
+                            </label>
+                            <input type = "text" name = "Date-of-birth" id = "Date-of-birth-input" placeholder="Date of Birth">
+                        </div>
+                        <div class = "email">
+                            <label for = "email">
+                                <span class="material-symbols-outlined">
+                                    email
+                                </span>Email:
+                            </label>
+                            <input type = "text" name = "email" id = "email-input" placeholder="Email">
+                        </div>
+                        <div class = "Doctor-name">
+                            <label for = "doctor-name">
+                                <span class="material-symbols-outlined">
+                                    health_and_safety
+                                </span>Doctor Name:
+                            </label>
+                            <input type = "text" name = "Doctor-name" id = "Doctor-name-input" placeholder="Doctor Name">
+                        </div>
+                        <div class = "medications">
+                            <label for = "medications">
+                                <span class="material-symbols-outlined">
+                                    pill
+                                </span>Medications:
+                            </label>
+                            <input type = "text" name = "medications" id = "medications-input" placeholder="Medications(list out names for refernce, to add to calendar go to medications page)">
+                        </div>
+                    </dd>
+                </dl>
+                <button type="submit" class="save-button">Save</button>
+                <button type="button" class="edit-button">Edit Account</button>
+            </form>
+        </div> 
+    </body>
+</html>

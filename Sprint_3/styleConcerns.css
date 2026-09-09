@@ -1,0 +1,99 @@
+/* Styling for the concerns page */
+.concerns {
+    margin-left: 90px;
+    padding: 40px;
+}
+
+.concerns h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.concerns form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.concerns form dl {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.concerns form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.concerns form input,
+.concerns form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    resize: none; /* Prevent resizing for consistent styling */
+}
+
+.concerns form textarea {
+    height: 120px; /* Larger height for the main body */
+    word-wrap: break-word; /* Ensure long words wrap to the next line */
+    overflow-wrap: break-word; /* Additional support for word wrapping */
+}
+
+.concerns form input:focus,
+.concerns form textarea:focus {
+    outline: none;
+    border-color: #ffd972;
+    background-color: #fff;
+}
+
+.concerns button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #ffd972;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.concerns button:hover {
+    background-color: #fbb800;
+}
+
+.past-concerns {
+    margin-top: 30px;
+}
+
+.past-concerns h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.past-concerns ul {
+    list-style: none;
+    padding: 0;
+}
+
+.past-concerns ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

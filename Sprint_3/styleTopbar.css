@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Segoe UI, sans-serif;
+}
+
+.topBar {
+    margin-left: 85px;
+    background-color: #fdf5dd;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Branding (left side) */
+.topBar-C{
+    display: flex;
+    flex-direction: column;
+}
+
+.topBar-C h1 a {
+    font-size: 26px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.topBar-C p {
+    font-size: 14px;
+    color: #000000;
+    margin-top: 2px;
+}
+
+/* Login/Signup links (right side) */
+.topBar-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.topBar-links li a {
+    color: #050400;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.topBar-links li a:hover {
+    background-color: #fbb800;
+    color: #050000;
+}

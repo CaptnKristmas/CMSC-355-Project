@@ -1,0 +1,9 @@
+[
+  {
+    "userType": "patient",
+    "firstname": "Vlad",
+    "username": "Vlad",
+    "email": "vlad@gmail.com",
+    "password": "Password"
+  }
+]

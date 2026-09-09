@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Adhere Medical - Your partner in health.">
+        <meta name="keywords" content="health, medical, adhere, healthcare, wellness">
+        <title>Adhere Medical</title>
+        <link rel = "stylesheet" href = "styleSidebar.css">
+        <link rel = "stylesheet" href = "styleTopbar.css">
+        <link rel = "stylesheet" href = "styleConcerns.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <script>
+            function logout() {
+                // Clear session storage to log out the user
+                sessionStorage.clear();
+                // Redirect to the login page
+                window.location.href = "login.html";
+            }
+        </script>
+        <style>
+            body{
+                background-color: #fdf5dd;
+            }
+            .concerns{
+                margin-left: 90px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "topBar">
+            <div class = "topBar-C">
+                <h1><a href="index.html">Adhere Medical</a></h1>
+                <p>Your partner in health.</p>
+            </div>
+            <ul class = "topBar-links">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="Signup.html">Signup</a></li>
+            </ul>
+        </div>
+        <aside class = "sidebar">
+            <div class = "sidebar-header">
+                <img src="images/pill_bottle.jpg" alt="pill bottle">
+                <h2>Adhere Medical</h2>
+            </div>
+            <ul class = "sidebar-links">
+                <li><a href="medication.html">
+                    <span class="material-symbols-outlined">
+                        pill
+                    </span>Medication</a>
+                </li>
+                <li><a href="calender.html">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>Calender</a>
+                </li>
+                <li><a href="concerns.html">
+                    <span class="material-symbols-outlined">
+                        description
+                    </span>Concerns</a>
+                </li>
+                <li><a href="profile.html">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>Profile</a>
+                </li>
+            </ul>
+            <ul class = "sidebar-footer">
+                <li><a href="index.html">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                    </span>Homepage</a>
+                </li>
+                <li><a href="mailto:examplemail@gmail.com">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>Email Us</a>
+                </li>
+                <li><a href="privacy.html">
+                    <span class="material-symbols-outlined">
+                        safety_check
+                    </span>Privacy Policy</a>
+                </li>
+                <li><a href="#" onclick="logout()">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>Logout</a>
+                </li>
+            </ul>
+        </aside>
+        <div class = "concerns">
+            <h2>Your Concerns: </h2>
+            <form id="form">
+                <dl>
+                    <dt>
+                        <div class = "Concern-title">
+                            <label for = "concern-title">
+                                <span class="material-symbols-outlined">
+                                    mail
+                                </span>Concern Title:                
+                            </label>
+                            <input type = "text" name = "concern-title" id = "concern-title-input" placeholder="Concern Title">
+                        </div>
+                    </dt>
+                    <dd>
+                        <div class = "Concern-body">
+                            <label for = "Concern-body">
+                                <span class="material-symbols-outlined">
+                                    notes
+                                </span>
+                            </label>
+                            <textarea type = "text" name = "Concern-body" id = "Concern-body-input" placeholder="Enter you text here ...">  </textarea>
+                        </div>
+                    </dd>
+                </dl>
+                <button type="submit" class="Send-button">+ Send</button>
+            </form>
+            <div class="past-concerns">
+                <h3>Past Concerns:</h3>
+                <ul id="concerns-list">
+                    <!-- past concerns will be added here -->
+                </ul>
+            </div>
+            <script>
+                document.getElementById("form").addEventListener("submit", function(event) {
+                    event.preventDefault();
+            
+                    const name = document.getElementById("concern-title-input").value.trim();
+                    const body = document.getElementById("Concern-body-input").value.trim();
+            
+                    if (!name) {
+                        alert("Concern title is required.");
+                        return;
+                    }
+            
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `
+                        <strong>${name}</strong>: ${body}
+                        <button class="remove-btn">Remove</button>
+                    `;
+            
+                    document.getElementById("concerns-list").appendChild(listItem);
+            
+                    // Add event listener to remove button
+                    listItem.querySelector(".remove-btn").addEventListener("click", function () {
+                        listItem.remove();
+                    });
+            
+                    document.getElementById("form").reset();
+                });
+            </script>            
+        </div> 
+    </body>
+</html>
